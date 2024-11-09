@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('logofondo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header .logo img {
+    width: 200px; /* Ajusta según el tamaño de tu logo */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin: 40px 0;
+}
+
+/* Sección de productos */
+#productos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    background: rgba(58, 160, 27, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.producto h3 {
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+.producto p {
+    font-size: 1.1em;
+}
+
+.btn-comprar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+}
+
+.btn-comprar:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Formulario de contacto */
+#contacto {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contacto label {
+    margin: 10px 0 5px;
+}
+
+#contacto input, #contacto textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+}
+
+#contacto button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contacto button:hover {
+    background-color: #0056b3;
+}
