@@ -7,7 +7,7 @@ body {
 }
 .container {
     width: 90%;
-    margin: 0 auto;
+    margin: 3%;
 }
 .header .container {
     display: flex;
@@ -24,8 +24,8 @@ body {
 }
 .logo img{
     margin: auto 0;
-    height: auto;
-    width: 100%;
+    height: auto 0;
+    width: 250px;
 }
 .quick-search input {
     border: 1px solid #ccc;
@@ -37,6 +37,221 @@ body {
 .quick-search input:focus {
     outline: none;
 }
+.header-nav {
+    background-color: #5F5E4A;
+}
+.header-nav ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    flex-wrap: wrap;
+    text-wrap: nowrap;
+    column-gap: 50px;
+    row-gap: 10px;
+}
+.header-nav ul li{
+    margin: 10px 0;
+}
+.header-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: .875rem;
+}.header-nav ul li a:hover {
+    color: #ccc;
+}
+.m-35 {
+    margin: 40px 0px;
+}
+footer {
+    width: 100%;
+    height: 250px;
+    background-color: #5F5E4A;
+}
+footer .container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+footer .panels {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-grow: 1;
+}
+footer .container .panels div{
+    width: 20%;
+    height: 100%;
+}
+footer .copyrigth {
+    margin: 10px 0;
+}
+@media (max-width: 512px) {
+    .header .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+footer .container {
+    color: #fff;
+}
+body {
+    width: 100%;
+    height: 250px;
+    background-color: white;
+}
+body .container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body .main .panels {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-grow: 1;
+}
+body .container .panels div{
+    width: 20%;
+    height: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  #contenedorSlider{
+    position: relative; 
+    border-radius: 50px; 
+    top: 50px; 
+    display:flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 60vh; 
+    width: 90vw; 
+    margin: 0 auto; 
+    background:linear-gradient(180deg, #a0356100 0%, rgba(0,0,0,0.5) 100%);
+    overflow: hidden; 
+  }
+  
+  img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 0;
+    transition: opacity 0.25s ease;
+  }
+  
+  .contenedorTitulos{
+    z-index: 2;
+    text-align: center;
+    align-self: flex-end;
+  }
+  
+  
+  .botonAvanzar, .botonRetroceder{
+    position: relative;
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #5F5E4A;
+    border-radius: 100%;
+    background-color: #c2beb1;
+    z-index: 2;
+    opacity: 0.7
+  }
+  
+  .botonAvanzar:hover, .botonRetroceder:hover{
+    opacity: 1;
+    transition: ease 0.3s;
+  }
+  
+  .subtitulo{
+    
+    font-family: 'Chewy', sans-serif;
+    font-weight: 200;
+    color: white;
+    margin-bottom: -10px;
+    user-select: none;
+  }
+  
+  #titulo{
+    font-family: 'Chewy', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 70px;
+    user-select: none;
+    margin-bottom: 10px;
+  }
+  
+  i{
+    position: absolute;
+    margin: 0 auto;
+    left: 25%;
+    top: 27%;
+    font-size: 25px;
+  }
+  
+  @media screen and (max-width: 600px){
+    
+    #contenedorSlider{
+    position: relative;
+    border-radius: 30px;
+    top: 50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40vh;
+    width: 90vw;
+    margin: 0 auto;
+    background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 100%);
+    overflow: hidden;
+  }
+    
+    .botonAvanzar, .botonRetroceder{
+    position: relative;
+    margin: 20px;
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 100%;
+    background-color: white;
+    z-index: 2;
+    opacity: 0.5
+  }
+    
+    .subtitulo{
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    padding-bottom: 15px;
+    color: white;
+    user-select: none;
+  }
+    
+    #titulo{
+    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    color: #847d62;
+    font-size: 30px;
+    user-select: none;
+  }
+  
+  i{
+    position: absolute;
+    margin: 0 auto;
+    left: 25%;
+    top: 27%;
+    font-size: 15px;
+  }
+  .metodos{
+    
+  }
 /* header {
     background-color: #2a2a2a;
     color: #5f5f5f;
