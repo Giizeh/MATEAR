@@ -41,5 +41,62 @@ function cambiarContenido(){
       document.getElementById("titulo").innerHTML ="Cyber Monday";
       break; 
   }
- },125) 
+ },125)
+ 
 }
+
+document.addEventListener(
+  "DOMContentLoaded", 
+  e => { 
+    var bouncer = new Bouncer('form', {
+      disableSubmit: true,
+      messageAfterField: true,
+      customValidations: {
+        contaseñasNoCoinciden: campo => {
+          var selector = campo.getAttribute('data-bouncer-match');
+          if (!selector) return false;
+          var otroCampo = campo.form.querySelector(selector);
+          if (!otroCampo) return false;
+          return otroCampo.value !== campo.value;
+        }
+      },
+      messages: {
+        contaseñasNoCoinciden: campo => {
+          var customMessage = campo.getAttribute('data-bouncer-mismatch-message');
+          return customMessage ? customMessage : 'Las contraseñas deben coincidir'
+        },
+        missingValue: {default: 'Por favor ingresa este dato.'},
+        patternMismatch: {email: 'Por favor ingresa un email válido.'},
+        wrongLength: {under: 'Por favor ingresa {minLength} dígitos o más. Hasta ahora ingresaste solo {length}.'}
+      }
+    });
+
+    document.addEventListener(
+      'bouncerFormInvalid', 
+      event => {
+        window.scrollTo(0, event.detail.errors[0].offsetTop);
+      }, 
+      false
+    );
+
+    document.addEventListener(
+      'bouncerFormValid', 
+      () => {
+        var url = 'https://codepen.io/lucasn1974/pen/yQrZma'
+
+        fetch('registro', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            nombre: document.getElementById('nombre').value,
+            email: document.getElementById('email').value,
+            contraseña: sha3_512(sha3_512(document.getElementById('contraseña').value) + url)
+          })
+        })
+      }, 
+      false
+    );
+  }
+)
