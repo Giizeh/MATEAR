@@ -100,3 +100,14 @@ document.addEventListener(
     );
   }
 )
+// Seleccionar el contenedor por ID
+const container = document.getElementById("Container");
+
+// Agregar un nuevo atributo
+container.setAttribute("data-visible", "true");
+
+// Cambiar un estilo dinámicamente
+container.style.backgroundColor = "#d1f7d6";
+
+// Mostrar un atributo en la consola
+console.log(container.getAttribute("data-role"));
