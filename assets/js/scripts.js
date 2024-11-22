@@ -111,3 +111,37 @@ container.style.backgroundColor = "#d1f7d6";
 
 // Mostrar un atributo en la consola
 console.log(container.getAttribute("data-role"));
+
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevenir el envío del formulario
+  
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  const errorMessage = document.getElementById('error-message');
+  
+  // Validar que todos los campos estén llenos
+  if (!name || !email || !password || !confirmPassword) {
+      errorMessage.textContent = 'Por favor, completa todos los campos.';
+      return;
+  }
+  
+  // Validar que las contraseñas coincidan
+  if (password !== confirmPassword) {
+      errorMessage.textContent = 'Las contraseñas no coinciden.';
+      return;
+  }
+  
+  // Validar longitud mínima de la contraseña
+  if (password.length < 6) {
+      errorMessage.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+      return;
+  }
+  
+  // Si pasa todas las validaciones
+  errorMessage.textContent = '';
+  alert('Registro exitoso');
+  document.getElementById('registrationForm').reset(); // Reiniciar el formulario
+});
+

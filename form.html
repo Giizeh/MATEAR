@@ -1,70 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compra mates exclusivos y artesanales para disfrutar del mate en su máxima expresión.">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/scripts.js"></script>
-    <title>Document</title>
+    <title>MateAr Tienda de Mates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #efe7dd;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #c2beb1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            flex: 1;
+        }
+
+        .tab.active {
+            border-bottom: 2px solid #5f5e4a;
+            color: #5f5e4a;
+        }
+
+        form {
+            display: none;
+        }
+
+        form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #5f5e4a;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5f5e4a;
+            color: #c2beb1;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5f5e4a;
+        }
+    </style>
 </head>
-<body>
-    <div class="mdl-layout mdl-js-layout">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Cuentas de Usuario</span>
+<body>          
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" id="tab-register">Registro</div>
+            <div class="tab" id="tab-login">Iniciar Sesión</div>
+        </div>
+        <form id="form-register" class="active">
+            <div class="form-group">
+                <label for="register-name">Nombre:</label>
+                <input type="text" id="register-name" name="register-name" placeholder="Ingresa tu nombre" required>
             </div>
-        </header>
-        <main class="mdl-layout__content">
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--4-offset-desktop mdl-cell--2-offset-tablet">
-    
-                    <div class="mdl-card mdl-shadow--2dp">
-                        <div class="mdl-card__title mdl-card--border">
-                            <h2 class="mdl-card__title-text">Registración</h2>
-                        </div>
-                        <form data-validate>
-                            <div class="mdl-card__supporting-text">
-                                <div style="margin-bottom: 12px">Para crear tu cuenta necesitamos que completes la siguiente informacion:</div>
-    
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <label class="mdl-textfield__label" for="nombre">Nombre</label>
-                                    <input class="mdl-textfield__input" type="text" id="nombre" name="nombre" required data-bouncer-target="#nombre-error">
-                                    </input>
-                                </div>
-                                <div id="nombre-error"></div>
-    
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <label class="mdl-textfield__label" for="email">Email</label>
-                                    <input class="mdl-textfield__input" type="email" id="email" name="email" required data-bouncer-target="#email-error">
-                                    </input>
-                                </div>
-                                <div id="email-error"></div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <label class="mdl-textfield__label" for="contraseña">Contraseña</label>
-                                    <input class="mdl-textfield__input" type="password" id="contraseña" name="contraseña" required minlength=6 data-bouncer-target="#contraseña-error">
-                                    </input>
-                                </div>
-                                <div id="contraseña-error"></div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    
-                                    <label class="mdl-textfield__label" for="confirmar_contraseña">Confirmar Contraseña</label>
-                                    <input class="mdl-textfield__input" type="password" id="confirmar_contraseña" name="confirmar_contraseña" data-bouncer-target="#confirmar_contraseña-error" required minlength=6 data-bouncer-match="#contraseña" data-bouncer-mismatch-message="Las Contraseñas no coinciden.">
-                                    </input>
-                                </div>
-                                <div id="confirmar_contraseña-error"></div>
-                            </div>
-    
-                            <div class="mdl-card__actions">
-                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="width:100%">
-                    Registrarme
-                  </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="register-email">Correo Electrónico:</label>
+                <input type="email" id="register-email" name="register-email" placeholder="Ingresa tu correo" required>
             </div>
-        </main>
+            <div class="form-group">
+                <label for="register-password">Contraseña:</label>
+                <input type="password" id="register-password" name="register-password" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
+        <form id="form-login">
+            <div class="form-group">
+                <label for="login-email">Correo Electrónico:</label>
+                <input type="email" id="login-email" name="login-email" placeholder="Ingresa tu correo" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" name="login-password" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
     </div>
+    <script>
+        const tabRegister = document.getElementById('tab-register');
+        const tabLogin = document.getElementById('tab-login');
+        const formRegister = document.getElementById('form-register');
+        const formLogin = document.getElementById('form-login');
+
+        // Cambiar entre Registro e Inicio de Sesión
+        tabRegister.addEventListener('click', () => {
+            tabRegister.classList.add('active');
+            tabLogin.classList.remove('active');
+            formRegister.classList.add('active');
+            formLogin.classList.remove('active');
+        });
+
+        tabLogin.addEventListener('click', () => {
+            tabLogin.classList.add('active');
+            tabRegister.classList.remove('active');
+            formLogin.classList.add('active');
+            formRegister.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
